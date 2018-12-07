@@ -1,6 +1,6 @@
 {
-  "name": "npm-cli-login",
-  "version": "0.0.10",
+  "name": "vincer-npm-cli-login",
+  "version": "0.0.11",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/postmanlabs/npm-cli-login.git"
+    "url": "git+https://github.com/vinceroti/npm-cli-login.git"
   },
   "scripts": {
     "test": "./scripts/test.sh"

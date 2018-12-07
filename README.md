@@ -1,19 +1,21 @@
-# npm-cli-login [![Build Status](https://travis-ci.org/postmanlabs/npm-cli-login.svg?branch=master)](https://travis-ci.org/postmanlabs/npm-cli-login)
+# vinceroti-npm-cli-login [![Build Status](https://travis-ci.org/postmanlabs/npm-cli-login.svg?branch=master)](https://travis-ci.org/postmanlabs/npm-cli-login)
+
+##THIS IS A FORK. Main repo is failing, this repo includes the fix.
 
 Allows you to log in to NPM without STDIN, STDOUT. Use in places like CI build systems.
 Also creates/modifies entries in the ~/.npmrc file for authentication.
 
 ### Installation
 
-    npm install -g npm-cli-login
+    npm install -g vinceroti-npm-cli-login
 
-Use -g flag to use npm-cli-login via the CLI
+Use -g flag to use vinceroti-npm-cli-login via the CLI
 
 ### Usage
 
 ##### CLI
 
-`npm-cli-login` expects the following environment variables to be set before you can use it to authenticate:
+`vinceroti-npm-cli-login` expects the following environment variables to be set before you can use it to authenticate:
 
 - `NPM_USER`: NPM username
 - `NPM_PASS`: NPM password
@@ -24,11 +26,11 @@ Use -g flag to use npm-cli-login via the CLI
 
 Once the required ones are set, you can just run the following to log in:
 
-    npm-cli-login
+    vinceroti-npm-cli-login
 
 You can also export variables and run it all in one line:
 
-    NPM_USER=testUser NPM_PASS=testPass NPM_EMAIL=test@example.com npm-cli-login
+    NPM_USER=testUser NPM_PASS=testPass NPM_EMAIL=test@example.com vinceroti-npm-cli-login
 
 There is also support for command line arguments:
 
@@ -40,9 +42,9 @@ There is also support for command line arguments:
 - `--quotes`: Set to `false` by default. Specifies whether your auth token requires quotes. This might required when your auth token has special characters, like `=`, `?` etc.
 - `--config-path`: Set to `~/` by default. Can be used to configure a custom .npmrc file to edit (Do note this is the path of the file, not the file itself)
 
-For example: ```npm-cli-login -u testUser -p testPass -e test@example.com```
+For example: ```vinceroti-npm-cli-login -u testUser -p testPass -e test@example.com```
 
-Or: ```npm-cli-login -u testUser -p testPass -e test@example.com -r https://private.npm.com -s @privateNPM --quotes --config-path="./custom/path/"```
+Or: ```vinceroti-npm-cli-login -u testUser -p testPass -e test@example.com -r https://private.npm.com -s @privateNPM --quotes --config-path="./custom/path/"```
 
 Do note that at least one of the two ways must be configured, that is, you must either provide the required fields (username, password and email) using the environment variables or the command line arguments (or both)
 
@@ -50,7 +52,7 @@ Do note that at least one of the two ways must be configured, that is, you must 
 
 To use the package programmatically, just require the module and pass in your NPM auth details as arguments:
 
-    var npmLogin = require('npm-cli-login');
+    var npmLogin = require('vinceroti-npm-cli-login');
     npmLogin(username, password, email [, registry, scope, quotes, configPath]);
 
 ##### Example
@@ -58,7 +60,7 @@ To use the package programmatically, just require the module and pass in your NP
 Logging in to the NPM registry:
 
 ```
-var npmLogin = require('npm-cli-login'),
+var npmLogin = require('vinceroti-npm-cli-login'),
     username = 'testUser',
     password = 'testPass',
     email = 'test@example.com'
@@ -69,7 +71,7 @@ npmLogin(username, password, email)
 Logging in to private NPM registries:
 
 ```
-var npmLogin = require('npm-cli-login'),
+var npmLogin = require('vinceroti-npm-cli-login'),
     username = 'testUser',
     password = 'testPass',
     email = 'test@example.com',
