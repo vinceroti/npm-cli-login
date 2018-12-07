@@ -1,6 +1,6 @@
-# vinceroti-npm-cli-login [![Build Status](https://travis-ci.org/postmanlabs/npm-cli-login.svg?branch=master)](https://travis-ci.org/postmanlabs/npm-cli-login)
+# npm-cli-login [![Build Status](https://travis-ci.org/postmanlabs/npm-cli-login.svg?branch=master)](https://travis-ci.org/postmanlabs/npm-cli-login)
 
-##THIS IS A FORK. Main repo is failing, this repo includes the fix.
+## THIS IS A FORK. Main repo is failing, this repo includes the fix.
 
 Allows you to log in to NPM without STDIN, STDOUT. Use in places like CI build systems.
 Also creates/modifies entries in the ~/.npmrc file for authentication.
