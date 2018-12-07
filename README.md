@@ -7,15 +7,15 @@ Also creates/modifies entries in the ~/.npmrc file for authentication.
 
 ### Installation
 
-    npm install -g npm-cli-login-vr
+    npm install -g npm-cli-login-vroti
 
-Use -g flag to use npm-cli-login-vr via the CLI
+Use -g flag to use npm-cli-login-vroti via the CLI
 
 ### Usage
 
 ##### CLI
 
-`npm-cli-login-vr` expects the following environment variables to be set before you can use it to authenticate:
+`npm-cli-login-vroti` expects the following environment variables to be set before you can use it to authenticate:
 
 - `NPM_USER`: NPM username
 - `NPM_PASS`: NPM password
@@ -26,11 +26,11 @@ Use -g flag to use npm-cli-login-vr via the CLI
 
 Once the required ones are set, you can just run the following to log in:
 
-    npm-cli-login-vr
+    npm-cli-login-vroti
 
 You can also export variables and run it all in one line:
 
-    NPM_USER=testUser NPM_PASS=testPass NPM_EMAIL=test@example.com npm-cli-login-vr
+    NPM_USER=testUser NPM_PASS=testPass NPM_EMAIL=test@example.com npm-cli-login-vroti
 
 There is also support for command line arguments:
 
@@ -42,9 +42,9 @@ There is also support for command line arguments:
 - `--quotes`: Set to `false` by default. Specifies whether your auth token requires quotes. This might required when your auth token has special characters, like `=`, `?` etc.
 - `--config-path`: Set to `~/` by default. Can be used to configure a custom .npmrc file to edit (Do note this is the path of the file, not the file itself)
 
-For example: ```npm-cli-login-vr -u testUser -p testPass -e test@example.com```
+For example: ```npm-cli-login-vroti -u testUser -p testPass -e test@example.com```
 
-Or: ```npm-cli-login-vr -u testUser -p testPass -e test@example.com -r https://private.npm.com -s @privateNPM --quotes --config-path="./custom/path/"```
+Or: ```npm-cli-login-vroti -u testUser -p testPass -e test@example.com -r https://private.npm.com -s @privateNPM --quotes --config-path="./custom/path/"```
 
 Do note that at least one of the two ways must be configured, that is, you must either provide the required fields (username, password and email) using the environment variables or the command line arguments (or both)
 
@@ -52,7 +52,7 @@ Do note that at least one of the two ways must be configured, that is, you must 
 
 To use the package programmatically, just require the module and pass in your NPM auth details as arguments:
 
-    var npmLogin = require('npm-cli-login-vr');
+    var npmLogin = require('npm-cli-login-vroti');
     npmLogin(username, password, email [, registry, scope, quotes, configPath]);
 
 ##### Example
@@ -60,7 +60,7 @@ To use the package programmatically, just require the module and pass in your NP
 Logging in to the NPM registry:
 
 ```
-var npmLogin = require('npm-cli-login-vr'),
+var npmLogin = require('npm-cli-login-vroti'),
     username = 'testUser',
     password = 'testPass',
     email = 'test@example.com'
@@ -71,7 +71,7 @@ npmLogin(username, password, email)
 Logging in to private NPM registries:
 
 ```
-var npmLogin = require('npm-cli-login-vr'),
+var npmLogin = require('npm-cli-login-vroti'),
     username = 'testUser',
     password = 'testPass',
     email = 'test@example.com',
